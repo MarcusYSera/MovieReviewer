@@ -1,0 +1,46 @@
+For a red belt:
+CRUD operations all working
+Able to create new movies
+All movies are displayed upon visiting the website
+User may choose to read the reviews of a particular movie
+Able to add reviews for each movie
+Able to delete each movie
+Routing
+Root route redirects to '/movies' to display all the movies
+Route ‘movies/new’ displays the form to create a new movie
+Successful creation and cancel redirect to the root route
+Route ‘/movies/:id’ displays the reviews of a particular movie and the delete button
+Route ‘/movies/:id/review’ displays the form to add a review for a particular movie
+Successful submission or clicking cancel redirects to the movie's reviews page
+Backend validations
+All movies must have a title of at least 3 characters
+Upon creating a movie, a review must be provided
+Reviews must have the name of the reviewer, a star rating, and content
+A reviewer's name must be at least 3 characters
+A review's star rating must be between 1 and 5 stars
+The content of a review must be at least 3 characters
+Error messages inform the user if a movie or review is not meeting requirements
+Error messages are custom-written (not the mongoose default messages)
+HTML and CSS reflect the wireframe to at least 75% accuracy
+
+
+
+
+
+
+For a black belt:
+Deployed, and not on Heroku
+ALL of the following four features:
+Provide an extra column in the table on the root route to display the calculated average star rating for each movie based on its reviews
+Rather than route to '/movies/new' to display the form to create a new movie, have the form nested within the component displayed at '/movies' when needed
+Implement Angular front end validations when creating a new review
+Errors should pop up as they are generated
+Disable the submit button until the form passes all validations
+Do this in addition to backend validations, front end validations do not replace backend validations
+On the route '/movies/:id', include a Delete button for each review, which removes the review from the database and from the view. Do not redirect to a different route, the user should stay on '/movies/:id'.
+Also:
+Create a short video walking through the features of your app. Show your validations working. There is no need to speak or show your code.
+Remove your github repo after deploying.
+The wireframe is available for download here .
+Don’t worry about:
+What the prompts are asking for. Just ask if you are unsure about what the goals are!
