@@ -1,0 +1,31 @@
+<!-- sample of back end validation from component. make sure variables are defined and the message is keyed correctly on the maincontroller (dictionary key and custom string. if model doesnt contain requirements this will never show) -->
+<!-- <p *ngIf="errorMessage.length > 0">{{errorMessage}}</p> -->
+<!-- sample of front end validation from component (be sure boolean is defined in component and triggered on submit function) -->
+<!-- <p *ngIf="errorBoolean == true">Your title must be at least 3 characters long</p> -->
+<!-- sample of real time validation -->
+<!-- <p *ngIf="newObject.title.length >= 1 && newObject.title.length < 3">Your title must be at least 3 characters</p> -->
+<form (submit)="onSubmit()">
+  <label>Title</label>
+  <input type="text" name="newObject.title" required minlength="5" maxlength="25" [(ngModel)] = "newObject.title" #title ="ngModel">
+  <p>
+    {{title.errors | json}}
+  </p>
+  <p>
+    {{title.valid|json}}
+  </p>
+  <label>User</label>
+  <input type="text" name="newReview.user" [(ngModel)] = "newReview.user">
+
+  <label>Rating</label>
+  <select name="newReview.rating" [(ngModel)]="newReview.rating">
+    <option value="5">5 Stars</option>
+    <option value="4">4 Stars</option>
+    <option value="3">3 Stars</option>
+    <option value="2">2 Stars</option>
+    <option value="1">1 Stars</option>
+  </select>
+  <label>Comment</label>
+  <textarea name="newReview.comment" [(ngModel)]="newReview.comment"></textarea>
+  <button type="submit">Submit</button>
+</form>
+<button [routerLink] = "['/products']">Cancel</button>

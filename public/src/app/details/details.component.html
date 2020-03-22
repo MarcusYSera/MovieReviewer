@@ -1,0 +1,16 @@
+<h3> Add a review for {{shownObject.title}}</h3>
+<form (submit)="onSubmit()">
+  <label>Your Name</label>
+  <input type="text" name="newReview.user" [(ngModel)]="newReview.user">
+  <label>Stars</label>
+  <select name="newReview.rating" [(ngModel)]="newReview.rating">
+    <option value="5">5 Stars</option>
+    <option value="4">4 Stars</option>
+    <option value="3">3 Stars</option>
+    <option value="2">2 Stars</option>
+    <option value="1">1 Stars</option>
+  </select>
+  <label>Your Review</label>
+  <textarea name="newReview.comment" [(ngModel)]="newReview.comment"></textarea>
+  <button type="submit">Submit</button>
+</form>

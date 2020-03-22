@@ -1,0 +1,6 @@
+<p>{{childVariable.title}}</p>
+<div *ngFor="let x of childVariable.reviews">
+  <p>{{x.comment}}</p>
+  <p>{{x.rating}}</p>
+</div>
+<button (click)="sendBackToParent()">Go back to parent</button>

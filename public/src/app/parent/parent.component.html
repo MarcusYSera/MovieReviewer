@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let x of listOfObjects">
+      <td>{{x.title}}</td>
+      <td>
+        <button (click) = "onShow(x)">Read Reviews</button>
+        <button (click) = "onEdit(x)">Update</button>
+        <button (click) = "onDelete(x)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-child *ngIf="selectedObject != null" [childVariable] = "selectedObject" (childOutputVariable)="ReceivedChildMessage($event)"></app-child>

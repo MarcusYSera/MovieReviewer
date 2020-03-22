@@ -1,0 +1,68 @@
+look at model.js and change schema to match the fields you see on the wireframe
+
+when doing update functions - > refer back to the mainController and change the req.body fields accordingly
+
+angular - look at app-routing module first
+make sure routes are not overridden by express and http Service routes.
+(express routes take priority) -- if they do override, you will see your angular side not load on the browser.
+
+every.html>every.component>httpService>routes>maincontroller -db
+html - actually display objects / initialize your functions for forms / routing
+component - create objects / functions to use on html
+service - will help the functions on component by communicating with routes
+routes - will communicate with maincontroller
+maincontroller - will actually run the db queries.
+
+on deployment - > stop servers first
+delete .git in public folder
+delete .gitignore in public folder
+on macs -> you can use command shift .   to find hidden files/folders
+on windows -> find the folder view options and enable hidden files to be seen
+make the gitignore on the same level as the server.js file.
+
+when making ec2 instance look for 
+Ubuntu Server 16.04 LTS (HVM), SSD Volume Type 
+on security groups
+add rule - > type 8000
+add rule -> type 27017
+
+
+
+
+//helpful copy pasting
+
+sudo git clone https://github.com/pjung101/boilerPlate.git
+
+server {
+    listen 80;
+    location / {
+        proxy_pass http://18.217.101.30:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+copy first
+i to insert
+paste (windows might need right click paste)
+esc
+:wq
+//replace the curly stuff leave the space between here
+                                                    |
+                                                    v
+sudo ln -s /etc/nginx/sites-available/{{repo name}} /etc/nginx/sites-enabled/{{repo name}}
+sudo ln -s /etc/nginx/sites-available/boilerPlate /etc/nginx/sites-enabled/boilerPlate
+
+
+
+sudo chown -R ubuntu boilerPlate
+
+When you get to Part 8:
+go to the documentation website
+get the GPG key
+click on 16.04 (Xenial)
+use that one
+
+use the red command instead of step 4.

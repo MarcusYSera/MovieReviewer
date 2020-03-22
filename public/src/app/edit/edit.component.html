@@ -1,0 +1,9 @@
+<h1>Editing {{editingObject.title}}</h1>
+<form (submit) = "onSubmit()">
+  <label>Title</label>
+  <input type="text" name="editingObject.title" [(ngModel)] = "editingObject.title">
+  <label>Url</label>
+  <input type="text" name="editingObject.url" [(ngModel)] = "editingObject.url">
+  <button type="submit">Submit</button>
+
+</form>

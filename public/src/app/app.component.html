@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- {path:'products', component:HomeComponent},
+  // {path:'', pathMatch:'full', redirectTo:'/products'},
+  {path:'products/new', component:NewComponent},
+  {path:'products/edit/:id', component:EditComponent},
+  {path:'products/:id/details', component:DetailsComponent},
+  {path:'parent', component:ParentComponent}, -->
+<div class="topBox">
+  <h1>Squishy Tomatoes</h1>
+  <a [routerLink]="['/movies']">Go to Movie List</a>
+  <button [routerLink]="['/parent']">Go to Sample Parent</button>
+</div>
+
+
+<router-outlet></router-outlet>

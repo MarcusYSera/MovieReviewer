@@ -1,0 +1,31 @@
+<a  [routerLink]="['/movies']">
+  <button (click)="deleteMovie(movie._id)">Delete Movie</button>
+</a>
+<h3>
+  Add a Review for {{movie.title}}
+</h3>
+<div class="table-wrapper-scroll-y">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Reviewer</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Reviews</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of movie.reviews">
+        <th scope="row">{{user.user}}</th>
+        <td>
+          {{user.rating}}
+        </td>
+        <td>
+          {{user.comment}}
+          <button (click)="deleteReview(user._id)">
+            Delete Review
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

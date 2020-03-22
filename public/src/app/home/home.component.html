@@ -1,0 +1,34 @@
+<div class="mainTable">
+  <h2>
+    Movie List
+  </h2>
+  <button [routerLink]="['/movies/new']">Add a New Movie</button>
+  <div class="table-wrapper-scroll-y">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Movie Title</th>
+          <th scope="col">Available Actions</th>
+          <th scope="col">Avg. Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <th scope="row">{{movie.title}}</th>
+          <td>
+            <button routerLink="/movies/{{movie._id}}">
+              Read Reviews
+            </button>
+            <button routerLink="/movies/{{movie._id}}/review">
+              Write Reviews
+            </button>
+          </td>
+          <td>
+            {{movie.reviews[0].rating}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- <app-new *ngIf="triggerAddingMovie"></app-new> -->
